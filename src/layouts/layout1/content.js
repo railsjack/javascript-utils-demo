@@ -6,9 +6,10 @@ const Content = (props) => {
   return (
     <Router>
       <Suspense fallback={<Loading />}>
-        {routes.map((route) =>
+        {routes.map((route, index) =>
           route.componet ? (
             <Route
+              key={String(index)}
               path={route.path}
               exact={route.exact}
               component={route.componet}
